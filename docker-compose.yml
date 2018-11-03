@@ -18,3 +18,18 @@ services:
       - "3000:3000"
     depends_on:
       - db
+  web_api:
+    image: nginx:latest
+    ports:
+      - "8000:80"
+    volumes:
+      # Nginxの設定ファイル 一応CORS用に作成
+      - ./swagger/swagger-editor.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./swagger/api.yml:/usr/share/nginx/html/api.yml:ro
+      - ./swagger/swagger-ui:/usr/share/nginx/html/swagger-ui:ro
+    links:
+      - swagger_editor:swagger_editor
+    depends_on:
+      - swagger_editor
+  swagger_editor:
+    image: swaggerapi/swagger-editor:latest

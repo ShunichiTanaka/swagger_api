@@ -1,14 +1,9 @@
 swagger: "2.0"
 info:
-  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  description: |
+    Rails環境におけるAPIドキュメント管理
   version: "1.0.0"
-  title: "Swagger Petstore"
-  termsOfService: "http://swagger.io/terms/"
-  contact:
-    email: "apiteam@swagger.io"
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  title: "Swagger"
 # hostの重複は不可
 # host: "swagger-api-sample-p.herokuapp.com"
 host: "127.0.0.1:3000"
@@ -18,21 +13,27 @@ schemes:
 paths:
   /:
     get:
+      tags:
+        - トップ
+      summary: Top
       response:
-        '200':
-          description: 'top response'
+        200:
+          description: top#index
+          schema:
+            type: string
+            example: LT会議 ライトニングトーク
   /users:
     get:
       tags:
-      - "pet"
-      summary: "Finds Pets by status"
-      description: "Multiple status values can be provided with comma separated strings"
+        - ユーザー一覧
+      summary: Response all user
+      description: 全てのユーザー一覧を取得する
       operationId: "findPetsByStatus"
       produces:
         - "application/json"
       responses:
         200:
-          description: "successful operation"
+          description: successful operation
           schema:
             type: "array"
             items:
@@ -44,3 +45,17 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+        name:
+          type: string
+          example: レバ太郎
+        age:
+          type: integer
+          format: int32
+          example: 20
+        birthday:
+          type: string
+          format: datetime
+          example: "2010-01-01"
+        email:
+          type: string
+          example: levetaro@leve.jp

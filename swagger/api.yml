@@ -20,15 +20,13 @@ paths:
         200:
           description: top#index
           schema:
-            type: string
-            example: LT会議 ライトニングトーク
+            $ref: "#/definitions/Response_Top"
   /users:
     get:
       tags:
         - ユーザー一覧
       summary: Response all user
       description: 全てのユーザー一覧を取得する
-      operationId: "findPetsByStatus"
       produces:
         - "application/json"
       responses:
@@ -39,6 +37,15 @@ paths:
             items:
               $ref: "#/definitions/User"
 definitions:
+  Response_Top:
+    type: object
+      properties:
+        status:
+          type: integer
+          example: 200
+        data:
+          type: string
+          example: LT会議 ライトニングトーク
   User:
     type: "object"
     properties:

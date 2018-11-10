@@ -36,6 +36,26 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/User"
+    post:
+      tags:
+        - ユーザー作成
+      summary: Create user
+      description: ユーザーを作成する
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/UserParams'
+      response:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+
 definitions:
   Response_Top:
     type: object
@@ -46,6 +66,11 @@ definitions:
         data:
           type: string
           example: LT会議 ライトニングトーク
+  User:
+    type: object
+    properties:
+      user:
+        $ref: '#/definitions/User'
   User:
     type: "object"
     properties:

@@ -41,6 +41,7 @@ group :development do
   gem 'rails-controller-testing'
   # Use committee api response test frame work
   gem 'committee'
+  gem 'json_schema', '~> 0.14'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

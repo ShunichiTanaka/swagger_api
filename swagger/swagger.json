@@ -55,7 +55,7 @@
           "name" : "body",
           "required" : false,
           "schema" : {
-            "$ref" : "#/definitions/UserParams"
+            "$ref" : "#/definitions/User"
           }
         } ],
         "responses" : {
@@ -89,23 +89,6 @@
       }
     },
     "User" : {
-      "type" : "object",
-      "properties" : {
-        "user" : {
-          "$ref" : "#/definitions/UserParams"
-        }
-      },
-      "example" : {
-        "user" : {
-          "birthday" : "2010-01-01",
-          "name" : "レバ太郎",
-          "id" : 0,
-          "age" : 20,
-          "email" : "levetaro@leve.jp"
-        }
-      }
-    },
-    "UserParams" : {
       "type" : "object",
       "properties" : {
         "id" : {

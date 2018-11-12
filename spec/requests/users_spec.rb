@@ -5,8 +5,7 @@ describe "Users", type: :request do
   include Rack::Test::Methods
 
   def committee_schema
-    @committee_schema ||=
-      begin
+    @committee_schema ||= begin
         driver = Committee::Drivers::OpenAPI2.new
         schema = JSON.parse(File.read(schema_path))
         driver.parse(schema)
@@ -17,9 +16,9 @@ describe "Users", type: :request do
     Rails.root.join('swagger', 'swagger.json')
   end
 
-  describe "GET /" do
-    it "works! (now write some real specs)" do
-      get '/'
+  describe "POST /users" do
+    it "トップ" do
+      post '/users', params: { name: 'レバ太郎', age: 20, birthday: '2010-11-14', email: 'test@leverages.jp' }
       assert_schema_conform
     end
   end

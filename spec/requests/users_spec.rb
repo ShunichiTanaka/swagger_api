@@ -20,7 +20,7 @@ describe "Users", type: :request do
   describe "GET /" do
     it "works! (now write some real specs)" do
       get '/'
-      assert_schema_confirm
+      assert_schema_conform
     end
   end
 end

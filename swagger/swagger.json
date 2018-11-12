@@ -7,14 +7,14 @@
   },
   "host" : "127.0.0.1:3000",
   "schemes" : [ "https", "http" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
   "paths" : {
     "/" : {
       "get" : {
         "tags" : [ "トップ" ],
         "summary" : "Top",
         "operationId" : "getUser",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
         "parameters" : [ ],
         "responses" : {
           "200" : {
@@ -32,8 +32,6 @@
         "summary" : "Response all user",
         "description" : "全てのユーザー一覧を取得する",
         "operationId" : "getAllUser",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
         "parameters" : [ ],
         "responses" : {
           "200" : {
@@ -52,8 +50,6 @@
         "summary" : "Create user",
         "description" : "ユーザーを作成する",
         "operationId" : "createUser",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",

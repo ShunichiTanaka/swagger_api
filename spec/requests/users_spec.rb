@@ -18,7 +18,7 @@ describe "Users", type: :request do
 
   describe "POST /users" do
     it "トップ" do
-      post '/users', params: { name: 'レバ太郎', age: 20, birthday: '2010-11-14', email: 'test@leverages.jp' }
+      post '/users', { name: 'レバ太郎', age: 20, birthday: '2010-01-01', email: 'levetaro@leve.jp' }
       assert_schema_conform
     end
   end

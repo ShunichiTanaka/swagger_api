@@ -51,12 +51,25 @@
         "description" : "ユーザーを作成する",
         "operationId" : "createUser",
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/User"
-          }
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "age",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "birthday",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
         } ],
         "responses" : {
           "201" : {

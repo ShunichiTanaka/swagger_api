@@ -99,6 +99,7 @@
     },
     "User" : {
       "type" : "object",
+      "required" : [ "age", "birthday", "email", "name" ],
       "properties" : {
         "id" : {
           "type" : "integer"
